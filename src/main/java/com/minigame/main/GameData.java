@@ -1,8 +1,8 @@
-package minigame.main;
+package com.minigame.main;
 
-import minigame.player.Player;
-import minigame.player.Pokemon;
-import minigame.shop.Shop;
+import com.minigame.model.Player;
+import com.minigame.model.Pokemon;
+import com.minigame.shop.Shop;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package minigame.shop;
+package com.minigame.model;
 
 public class Product {
     private String name;

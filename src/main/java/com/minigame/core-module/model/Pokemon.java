@@ -1,4 +1,4 @@
-package minigame.player;
+package com.minigame.model;
 
 public class Pokemon {
     String name;

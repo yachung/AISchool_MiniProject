@@ -1,4 +1,4 @@
-package minigame.player;
+package com.minigame.model;
 
 import java.util.List;
 

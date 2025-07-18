@@ -1,6 +1,7 @@
-package minigame.main;
+package com.minigame.main;
 
-import minigame.state.*;
+import com.minigame.service.state.IGameState;
+import com.minigame.service.state.StartState;
 
 import java.util.Scanner;
 

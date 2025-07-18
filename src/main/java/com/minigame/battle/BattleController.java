@@ -1,4 +1,4 @@
-package minigame.battle;
+package com.minigame.battle;
 
 public class BattleController {
 }

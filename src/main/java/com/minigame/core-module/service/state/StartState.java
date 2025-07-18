@@ -1,4 +1,4 @@
-package minigame.state;
+package com.minigame.service.state;
 
 import minigame.main.GameData;
 

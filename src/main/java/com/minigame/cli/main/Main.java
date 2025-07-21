@@ -1,4 +1,4 @@
-package com.minigame.main;
+package com.minigame.cli.main;
 
 public class Main {
     public static void main(String[] args) {

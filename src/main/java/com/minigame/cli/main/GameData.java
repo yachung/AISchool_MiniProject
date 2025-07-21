@@ -1,4 +1,4 @@
-package com.minigame.main;
+package com.minigame.cli.main;
 
 import com.minigame.model.Player;
 import com.minigame.model.Pokemon;

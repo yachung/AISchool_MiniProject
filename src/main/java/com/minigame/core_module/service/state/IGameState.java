@@ -1,6 +1,6 @@
-package com.minigame.service.state;
+package com.minigame.core_module.service.state;
 
-import com.minigame.main.GameData;
+import com.minigame.core_module.GameData;
 
 public interface IGameState {
     void OnStateEnter(GameData gameData);

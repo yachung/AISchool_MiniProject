@@ -1,7 +1,6 @@
-package com.minigame.service.state;
+package com.minigame.core_module.service.state;
 
-import minigame.main.GameData;
-
+import com.minigame.core_module.GameData;
 
 public class StartState implements IGameState {
 

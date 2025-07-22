@@ -1,8 +1,12 @@
-package com.minigame.model;
+package com.minigame.core_module.model;
 
 import java.util.List;
 
 public class Player {
+	private String name;
+	private int money;
+	private List<Pokemon> pokemons;
+	
     public String getName() {
         return name;
     }
@@ -19,7 +23,4 @@ public class Player {
         this.money = money;
     }
 
-    private String name;
-    private int money;
-    private List<Pokemon> pokemons;
 }

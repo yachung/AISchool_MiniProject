@@ -1,37 +1,53 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.5.3'
-	id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+    id 'org.springframework.boot' version '3.3.2' apply false // 모든 모듈에서 사용할 Spring Boot 버전을 중앙에서 관리
+    id 'io.spring.dependency-management' version '1.1.5' apply false // 의존성 관리 플러그인
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+// 모든 하위 모듈(subprojects)에 공통으로 적용될 설정
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
+    group = 'com.minigame' // 공통 그룹 ID
+    version = '0.0.1-SNAPSHOT' // 공통 버전
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // 모든 모듈에 공통적으로 필요한 의존성 (예: lombok)
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    }
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+// 각 모듈별로 특화된 설정을 정의할 수도 있습니다.
+// 예를 들어, cli_module은 부팅 가능한 jar로 만들지 않도록 설정합니다.
+project(':module_cli') {
+    bootJar {
+        enabled = false
+    }
+    jar {
+        enabled = true
+    }
 }
 
-repositories {
-	mavenCentral()
+project(':module_core') {
+    bootJar {
+        enabled = false
+    }
+    jar {
+        enabled = true
+    }
 }
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
+project(':module_web') {
+    bootJar {
+        enabled = true // web_module은 실행 가능한 jar로 만듭니다.
+    }
 }

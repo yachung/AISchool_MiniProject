@@ -1,0 +1,18 @@
+plugins {
+    id 'application' // application 플러그인 추가
+}
+
+dependencies {
+    implementation project(':module_core') // core_module에 의존
+    // 순수 CLI이므로 Spring Boot 스타터 제거
+    // CLI 관련 추가 라이브러리 (예: picocli 등)는 여기에 추가
+}
+
+application {
+    // CLI 애플리케이션의 메인 클래스 경로를 지정합니다.
+    mainClass = 'com.module_cli.Main'
+}
+
+run {
+    standardInput = System.in
+}

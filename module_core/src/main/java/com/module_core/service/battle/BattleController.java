@@ -1,6 +1,8 @@
-package com.minigame.core_module.service.state.battle;
+package com.module_core.service.battle;
 
-import java.util.List;
+import com.module_core.model.Player;
+import com.module_core.model.Pokemon;
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.function.Supplier;
@@ -25,7 +27,7 @@ public class BattleController {
     private final Scanner scanner = new Scanner(System.in);
 
 
-    public battleController(Player player, Supplier<Pokemon> Pokemon) {
+    public BattleController(Player player, Supplier<Pokemon> Pokemon) {
         this.player = player;
         this.Pokemon = Pokemon;
     }
@@ -38,19 +40,19 @@ public class BattleController {
         // 2. 배틀루프
         while (true) {
             // ---------- Player turn ----------
-            takePlayerTurn();
+            //takePlayerTurn();
 
             if (enemy.getCurHp() <= 0) {
                 System.out.println(enemy.getName() + "가 기절했다!");
-                rewardPlayer();
+                //rewardPlayer();
                 return player; // victory
             }
 
             // ---------- Enemy turn ----------
-            takeEnemyTurn();
+            //takeEnemyTurn();
 
-            if (player.getMyPokemon().getCurHp() <= 0) {
-                System.out.println(player.getMyPokemon().getName() + "가 기절했다!");
+            //if (player.getMyPokemon().getCurHp() <= 0) {
+                //System.out.println(player.getMyPokemon().getName() + "가 기절했다!");
                 return null; // defeat
             }
         }

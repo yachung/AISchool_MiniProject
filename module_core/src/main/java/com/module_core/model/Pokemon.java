@@ -1,4 +1,4 @@
-package com.minigame.core_module.model;
+package com.module_core.model;
 
 import java.util.List;
 

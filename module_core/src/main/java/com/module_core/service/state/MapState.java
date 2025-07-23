@@ -1,7 +1,7 @@
-package com.minigame.core_module.service.state;
+package com.module_core.service.state;
 
 
-import com.minigame.core_module.GameData;
+import com.module_core.GameData;
 
 public class MapState implements IGameState {
     @Override

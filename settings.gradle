@@ -1,1 +1,5 @@
-rootProject.name = 'miniproject'
+rootProject.name = 'MiniProject'
+
+include 'module_core'
+include 'module_cli'
+include 'module_web'
